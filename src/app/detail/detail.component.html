@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-9 mx-auto">
+          <h1>{{_datosDummy.datosDummy[id]["title"]}}</h1>
+          <h3>{{_datosDummy.datosDummy[id]["subtitle"]}}</h3>
+          <hr>
+          <span>Autor: {{_datosDummy.datosDummy[id]["author"]}}</span>
+          <p><em>Cuando se publicó: {{timeSince(_datosDummy.datosDummy[id]["date"])}}</em></p>
+          <img class="image portada" src="{{_datosDummy.datosDummy[id]['imgUrl']}}">
+          <br />
+          <p *ngFor="let parrafo of _datosDummy.datosDummy[id]['body'].split('#')">{{parrafo}}</p>
+          <hr>
+          <div class="navigate">
+            <div class="row">
+              <div class="col-4 text-left" *ngIf="id != 0">
+                <a [routerLink]="['/post/'+(id - 1)]">GO BACK</a>
+              </div>
+              <div class="col-4 text-left" *ngIf="id == 0">
+                <a [routerLink]="['/home']">THIS IS THE FIRST</a>
+              </div>
+              <div class="col-4 text-center">
+                <a [routerLink]="['/home']">GO HOME</a>
+              </div>
+              <div class="col-4 text-right" *ngIf="id < _datosDummy.datosDummy.length - 1">
+                <a [routerLink]="['/post/'+(_datosDummy.numberIndex(id) + 1)]">GO NEXT</a>
+              </div>
+              <div class="col-4 text-right" *ngIf="id == _datosDummy.datosDummy.length - 1">
+                <a [routerLink]="['/home']">THIS IS THE LAST</a>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
