@@ -1,7 +1,7 @@
 <img src="https://raw.githubusercontent.com/gothinkster/angular-realworld-example-app/master/logo.png">
 <h2>This blog structure it is created with the Angular framework, a local JSON file and the style of <a href="http://www.bootstrap.com" target="_blank">Bootstrap</a>
 
-# My Blog
+# My Blog Structure
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
